@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R6 Report Center</title>
+</head>
+
+<body style="
+margin:0;
+padding:0;
+background:#0d1117;
+font-family:Arial, sans-serif;
+color:white;
+background-image:
+linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1920');
+background-size:cover;
+background-position:center;
+">
+
+<div style="
+max-width:850px;
+margin:40px auto;
+padding:30px;
+background:rgba(20,20,20,0.92);
+border:1px solid #2f81f7;
+border-radius:14px;
+box-shadow:0 0 25px rgba(47,129,247,0.35);
+backdrop-filter:blur(5px);
+">
+
+<h1 style="
+text-align:center;
+font-size:38px;
+margin-bottom:10px;
+color:#2f81f7;
+letter-spacing:3px;
+text-shadow:0 0 15px #2f81f7;
+">
+R6 REPORT CENTER
+</h1>
+
+<p style="
+text-align:center;
+color:#aaa;
+margin-bottom:35px;
+">
+Jelentsd a szabályszegő játékosokat a rendszerünkön keresztül.
+</p>
+
+<form id="testForm">
+
+<!-- FELHASZNÁLÓ ADATOK -->
+
+<h2 style="
+border-left:4px solid #2f81f7;
+padding-left:10px;
+margin-bottom:20px;
+">
+Felhasználó adatok
+</h2>
+
+<label>Ország</label><br>
+<select id="country" style="
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:20px;
+background:#161b22;
+border:1px solid #30363d;
+color:white;
+border-radius:8px;
+">
+<option>Magyarország</option>
+<option>USA</option>
+<option>Németország</option>
+</select>
+
+<label>Felhasználónév</label><br>
+<input type="text" id="name" placeholder="Add meg a neved..." style="
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:20px;
+background:#161b22;
+border:1px solid #30363d;
+color:white;
+border-radius:8px;
+">
+
+<label>Email</label><br>
+<input type="email" id="email" placeholder="pelda@email.com" style="
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:20px;
+background:#161b22;
+border:1px solid #30363d;
+color:white;
+border-radius:8px;
+">
+
+<label>Jelszó</label><br>
+<input type="password" id="password" placeholder="********" style="
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:20px;
+background:#161b22;
+border:1px solid #30363d;
+color:white;
+border-radius:8px;
+">
+
+<label>Nem</label><br><br>
+
+<label style="margin-right:20px;">
+<input type="radio" id="male" name="gender" value="male"> Férfi
+</label>
+
+<label>
+<input type="radio" name="gender" id="female" value="female"> Nő
+</label>
+
+<!-- REPORT RÉSZ -->
+
+<h2 style="
+border-left:4px solid #ff6a00;
+padding-left:10px;
+margin-top:40px;
+margin-bottom:20px;
+">
+Játékos jelentése
+</h2>
+
+<label>Az elkövető játékos neve</label><br>
+<input type="text" id="repname" placeholder="Cheater123" style="
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:25px;
+background:#161b22;
+border:1px solid #30363d;
+color:white;
+border-radius:8px;
+">
+
+<h3 style="
+color:#ff6a00;
+margin-bottom:15px;
+">
+Csalási kategória
+</h3>
+
+<div style="
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin-bottom:25px;
+">
+
+<label style="
+background:#161b22;
+padding:12px;
+border-radius:8px;
+border:1px solid #30363d;
+cursor:pointer;
+">
+<input type="checkbox" id="cheat1"> Aimbotting
+</label>
+
+<label style="
+background:#161b22;
+padding:12px;
+border-radius:8px;
+border:1px solid #30363d;
+cursor:pointer;
+">
+<input type="checkbox" cheat2> Wallhacking
+</label>
+
+<label style="
+background:#161b22;
+padding:12px;
+border-radius:8px;
+border:1px solid #30363d;
+cursor:pointer;
+">
+<input type="checkbox" id="cheat3"> ESP Hack
+</label>
+
+<label style="
+background:#161b22;
+padding:12px;
+border-radius:8px;
+border:1px solid #30363d;
+cursor:pointer;
+">
+<input type="checkbox" id="cheat4"> Other
+</label>
+
+</div>
+
+<label>Mikor történt?</label><br>
+<input type="date" id="repdate" style="
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:20px;
+background:#161b22;
+border:1px solid #30363d;
+color:white;
+border-radius:8px;
+">
+
+<label>Bizonyíték feltöltése</label><br>
+<input type="file" id="upload" style="
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:20px;
+background:#161b22;
+border:1px solid #30363d;
+color:white;
+border-radius:8px;
+">
+
+<label>Részletes leírás</label><br>
+<textarea rows="6" id="repdesc" placeholder="Írd le pontosan mi történt..." style="
+width:100%;
+padding:12px;
+margin-top:8px;
+margin-bottom:30px;
+background:#161b22;
+border:1px solid #30363d;
+color:white;
+border-radius:8px;
+resize:none;
+"></textarea>
+
+<button type="submit" id="submit" style="
+width:100%;
+padding:16px;
+background:linear-gradient(90deg,#ff6a00,#ff9500);
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 20px rgba(255,106,0,0.4);
+">
+JELENTÉS KÜLDÉSE
+</button>
+
+</form>
+</div>
+
+</body>
+</html>
